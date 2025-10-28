@@ -1,4 +1,4 @@
-name: Python CI
+nname: Python CI
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # sistema onde o pipeline vai correr (Linux)
+    runs-on: ubuntu-latest
 
     steps:
       - name: Fazer checkout do código
@@ -17,16 +17,7 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"  # versão do Python a usar
-
-      - name: Instalar dependências (se existirem)
-        run: |
-          python -m pip install --upgrade pip
+          python-version: "3.11"
 
       - name: Testar se o código corre
-        run: |
-          python calculadora_simples.py <<EOF
-          soma
-          2
-          3
-          EOF
+        run: python main.py
