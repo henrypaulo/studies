@@ -1,3 +1,6 @@
+# Calculadora simples (versão sem input)
+# Autor: Henrique Paulo
+
 def soma(a, b):
     return a + b
 
@@ -14,22 +17,14 @@ def divide(a, b):
 
 def main():
     print("=== Calculadora Simples ===")
-    print("Operações disponíveis: soma, subtrai, multiplica, divide")
-    
-    operacao = input("Escolhe a operação: ").strip().lower()
-    a = float(input("Primeiro número: "))
-    b = float(input("Segundo número: "))
+    print("Executar operações automaticamente...\n")
 
-    if operacao == "soma":
-        print("Resultado:", soma(a, b))
-    elif operacao == "subtrai":
-        print("Resultado:", subtrai(a, b))
-    elif operacao == "multiplica":
-        print("Resultado:", multiplica(a, b))
-    elif operacao == "divide":
-        print("Resultado:", divide(a, b))
-    else:
-        print("Operação inválida!")
+    a, b = 10, 5  # valores fixos de exemplo
+
+    print(f"Soma: {a} + {b} = {soma(a, b)}")
+    print(f"Subtração: {a} - {b} = {subtrai(a, b)}")
+    print(f"Multiplicação: {a} × {b} = {multiplica(a, b)}")
+    print(f"Divisão: {a} ÷ {b} = {divide(a, b)}")
 
 if __name__ == "__main__":
     main()
